@@ -6,6 +6,7 @@
 package view;
 
 import dao.CarroDAO;
+import java.awt.HeadlessException;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -23,6 +24,15 @@ public class JFrameListaCarros extends JFrame implements JFrameComportamentosInt
     private DefaultTableModel modelo;
     private JScrollPane scroll;
 
+    public JFrameListaCarros() throws HeadlessException {
+    criarTela();
+    criarComponentes();
+    definirLocalizacao();
+    adicionarComponentes();
+    }
+
+        
+    
     @Override
     public void criarTela() {
         setSize(600, 600);

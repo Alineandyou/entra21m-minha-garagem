@@ -1,4 +1,3 @@
-
 package view;
 
 import dao.CarroDAO;
@@ -12,7 +11,6 @@ import model.Carro;
  * @author Alunos
  */
 public class JFrameCadastroCarro extends javax.swing.JFrame {
-    
 
     /**
      * Creates new form JFrameCadastroCarro
@@ -75,6 +73,7 @@ public class JFrameCadastroCarro extends javax.swing.JFrame {
         jTextFieldAno_lancamento = new javax.swing.JTextField();
         jLabelData_compra = new javax.swing.JLabel();
         jTextFieldData_compra = new javax.swing.JTextField();
+        jLabelCodigo = new javax.swing.JLabel();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -141,7 +140,7 @@ public class JFrameCadastroCarro extends javax.swing.JFrame {
 
         jLabelQuantidade_batidas.setText("Batidas");
 
-        jComboBoxQuantidade_batidas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "nenhum", "1", "2", "3", "4", "5", "mais" }));
+        jComboBoxQuantidade_batidas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2", "3", "4", "5", "mais" }));
         jComboBoxQuantidade_batidas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxQuantidade_batidasActionPerformed(evt);
@@ -188,14 +187,14 @@ public class JFrameCadastroCarro extends javax.swing.JFrame {
 
         jComboBoxFabricante.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Audi", "BMW", "Chevrolet", "Ferrari", "Fiat", "Ford", "Honda", "Hyundai" }));
 
-        jTextFieldAno_fabricacao.setToolTipText("20/07/2017");
+        jTextFieldAno_fabricacao.setToolTipText("");
         jTextFieldAno_fabricacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldAno_fabricacaoActionPerformed(evt);
             }
         });
 
-        jTextFieldAno_lancamento.setToolTipText("20/07/2017");
+        jTextFieldAno_lancamento.setToolTipText("");
 
         jLabelData_compra.setText("Compra");
 
@@ -209,7 +208,9 @@ public class JFrameCadastroCarro extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jLabel1))
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jLabel2)
@@ -254,10 +255,9 @@ public class JFrameCadastroCarro extends javax.swing.JFrame {
                                         .addComponent(jLabelAno_fabricacao)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFieldData_compra, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextFieldAno_lancamento, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                                        .addComponent(jTextFieldAno_fabricacao))))))
+                                    .addComponent(jTextFieldData_compra)
+                                    .addComponent(jTextFieldAno_lancamento, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldAno_fabricacao)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -311,8 +311,11 @@ public class JFrameCadastroCarro extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1))
+                    .addComponent(jLabelCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(5, 5, 5)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -442,14 +445,14 @@ public class JFrameCadastroCarro extends javax.swing.JFrame {
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
         dispose();
-        
+
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
         Carro meuCarro = new Carro();
-       
+
         meuCarro.setTipoPneu(Short.parseShort(jTextFieldTipo_pneu.getText()));
-        meuCarro.setAnoFabricacao (Short.parseShort( jTextFieldAno_fabricacao.getText()));
+        meuCarro.setAnoFabricacao(Short.parseShort(jTextFieldAno_fabricacao.getText()));
         meuCarro.setAnoLancamento(Short.parseShort(jTextFieldAno_lancamento.getText()));
         meuCarro.setNome(String.valueOf(jTextFieldNome.getSelectedText()));
         meuCarro.setChassi(String.valueOf(jTextFieldChassi.getText()));
@@ -460,41 +463,38 @@ public class JFrameCadastroCarro extends javax.swing.JFrame {
         meuCarro.setEstaFuncional(jRadioButtonSim.isSelected());
         meuCarro.setPotencia(Float.parseFloat(jTextFieldPotencia.getText()));
         meuCarro.setQuilometragem(Float.parseFloat(jTextFieldQuilometragem.getText()));
-        meuCarro.setRenavam(Interger.parseInt(j));
-        
-        
-        
+        meuCarro.setRenavam(Integer.parseInt(jTextFieldRenavam.getText()));
+        meuCarro.setPermitidaCirculacao(jRadioButtonSimm.isSelected());
+        meuCarro.setQuantidadeBatidas(Byte.parseByte((String) jComboBoxQuantidade_batidas.getSelectedItem()));
+        meuCarro.setQuantidadePortas(Byte.parseByte((String) jComboBoxQuantidade_portas.getSelectedItem()));
+
         String dataCompra = jTextFieldData_compra.getText();
+
         int ano = Integer.parseInt(dataCompra.substring(6, 10));
         int mes = Integer.parseInt(dataCompra.substring(3, 5));
         int dia = Integer.parseInt(dataCompra.substring(0, 2));
         meuCarro.setDataCompra(new Date(ano, mes, dia));
-        
-        Byte quantidadePortas = (jComboBoxQuantidade_portas.getSelectedIndex() * 2) + 2;
-       
-                
+
         CarroDAO dao = new CarroDAO();
-        int codigo = dao.inserir(meuCarro);
-        if (codigo!=Utilitarios.NAO_FOI_POSSIVEL_INSERIR){
-            JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
-        }else{
-            JOptionPane.showMessageDialog(null, "Não foi possivel inserir");
+        if (!jLabelCodigo.getText().equals("")) {
+            meuCarro.setId(Integer.parseInt(jLabelCodigo.getText()));
+            int codigo = dao.alterar(meuCarro);
+            if (codigo != Utilitarios.NAO_FOI_POSSIVEL_ALTERAR) {
+                JOptionPane.showMessageDialog(null, "Alteração realizada com sucesso");
+            } else {
+
+                JOptionPane.showMessageDialog(null, "Não foi possivel alterar");
+            }
+        } else {
+            int codigo = dao.inserir(meuCarro);
+            if (codigo != Utilitarios.NAO_FOI_POSSIVEL_INSERIR) {
+                JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
+                jLabelCodigo.setText(String.valueOf(codigo));
+            } else {
+                JOptionPane.showMessageDialog(null, "Não foi possivel inserir");
+            }
+
         }
-                
-                        
-        
-        
-       
-        
-        
-        
-        String dataCompra = .getTest();
-        
-        
-        
-        
-        
-        
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     private void jTextFieldAno_fabricacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAno_fabricacaoActionPerformed
@@ -555,6 +555,7 @@ public class JFrameCadastroCarro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelAno_fabricacao;
     private javax.swing.JLabel jLabelAno_lancamento;
     private javax.swing.JLabel jLabelChassi;
+    private javax.swing.JLabel jLabelCodigo;
     private javax.swing.JLabel jLabelCor;
     private javax.swing.JLabel jLabelData_compra;
     private javax.swing.JLabel jLabelDescricao;

@@ -66,6 +66,8 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabelCodigo" min="-2" pref="28" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
@@ -120,11 +122,9 @@
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jTextFieldData_compra" pref="80" max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jTextFieldAno_lancamento" pref="80" max="32767" attributes="0"/>
-                                          <Component id="jTextFieldAno_fabricacao" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="jTextFieldData_compra" max="32767" attributes="0"/>
+                                      <Component id="jTextFieldAno_lancamento" pref="80" max="32767" attributes="0"/>
+                                      <Component id="jTextFieldAno_fabricacao" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -199,9 +199,14 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jLabelCodigo" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
@@ -436,7 +441,7 @@
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="7">
-                <StringItem index="0" value="nenhum"/>
+                <StringItem index="0" value="0"/>
                 <StringItem index="1" value="1"/>
                 <StringItem index="2" value="2"/>
                 <StringItem index="3" value="3"/>
@@ -550,7 +555,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldAno_fabricacao">
           <Properties>
-            <Property name="toolTipText" type="java.lang.String" value="20/07/2017"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldAno_fabricacaoActionPerformed"/>
@@ -558,7 +563,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldAno_lancamento">
           <Properties>
-            <Property name="toolTipText" type="java.lang.String" value="20/07/2017"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelData_compra">
@@ -570,6 +575,8 @@
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="20/07/2017"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelCodigo">
         </Component>
       </SubComponents>
     </Container>
