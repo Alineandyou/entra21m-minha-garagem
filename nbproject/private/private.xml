@@ -5,12 +5,11 @@
         <group>
             <file>file:/T:/Java/MinhaGaragem/src/Principal.java</file>
             <file>file:/T:/Java/MinhaGaragem/src/view/JFrameCadastroCarro.java</file>
-            <file>file:/T:/Java/MinhaGaragem/src/database/ExemplosDeComandos.sql</file>
-            <file>file:/T:/Java/MinhaGaragem/src/database/Utilitarios.java</file>
             <file>file:/T:/Java/MinhaGaragem/src/dao/CarroDAO.java</file>
             <file>file:/T:/Java/MinhaGaragem/src/model/Carro.java</file>
             <file>file:/T:/Java/MinhaGaragem/src/view/JFrameListaCarros.java</file>
             <file>file:/T:/Java/MinhaGaragem/test/dao/CarroDAOJUnitTest.java</file>
+            <file>file:/T:/Java/MinhaGaragem/src/database/Conexao.java</file>
             <file>file:/T:/Java/MinhaGaragem/src/view/JFrameInicial.java</file>
             <file>file:/T:/Java/MinhaGaragem/src/database/MinhaGaragemEstrutura.sql</file>
             <file>file:/T:/Java/MinhaGaragem/src/view/JFrameComportamentosInterface.java</file>
